@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";  
+import { Component, numberAttribute } from "@angular/core";  
 import { CommonModule } from "@angular/common"; 
 import { FormsModule } from "@angular/forms";
 
@@ -18,4 +18,16 @@ interface Task{
 export class TodoComponent{
   task: Task[] =[];
   newTask: string='';
-}
+
+  addTask(){
+    if(this.newTask.trim()){
+      this.task.push({text: this.newTask.trim(), completed: false});
+      this.newTask='';
+    }
+  }
+  toggleTask(index:  number){
+    this.task[index].completed = !this.task[index].completed;
+  }
+
+  
+ }
