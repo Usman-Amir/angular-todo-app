@@ -16,21 +16,21 @@ interface Task{
 })
 
 export class TodoComponent{
-  task: Task[] =[];
+  tasks: Task[] =[];
   newTask: string='';
 
   addTask(){
     if(this.newTask.trim()){
-      this.task.push({text: this.newTask.trim(), completed: false});
+      this.tasks.push({text: this.newTask.trim(), completed: false});
       this.newTask='';
     }
   }
   toggleTask(index:  number){
-    this.task[index].completed = !this.task[index].completed;
+    this.tasks[index].completed = !this.tasks[index].completed;
   }
 
   deleteTask(index:number){
-    this.task.splice(index,1);
+    this.tasks.splice(index,1);
   }
   
  }
