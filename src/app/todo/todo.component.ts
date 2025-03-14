@@ -29,5 +29,8 @@ export class TodoComponent{
     this.task[index].completed = !this.task[index].completed;
   }
 
+  deleteTask(index:number){
+    this.task.splice(index,1);
+  }
   
  }
