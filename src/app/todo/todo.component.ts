@@ -1,11 +1,21 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";  
+import { CommonModule } from "@angular/common"; 
+import { FormsModule } from "@angular/forms";
+
+interface Task{
+  text: string;
+  completed: boolean
+}
 
 @Component({
   selector: 'app-todo',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './todo.component.html',
-  styleUrl: './todo.component.css'
+  styleUrls:['./todo.component.css']
 })
-export class TodoComponent {
 
+export class TodoComponent{
+  task: Task[] =[];
+  newTask: string='';
 }
